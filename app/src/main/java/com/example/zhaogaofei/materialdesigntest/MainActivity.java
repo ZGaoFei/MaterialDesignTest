@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.zhaogaofei.materialdesigntest.activity.ConstraintLayoutActivity;
+import com.example.zhaogaofei.materialdesigntest.activity.TextInputEditTextActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btOne = (Button) findViewById(R.id.button_one);
         btOne.setOnClickListener(this);
+        Button btTwo = (Button) findViewById(R.id.button_two);
+        btTwo.setOnClickListener(this);
     }
 
     @Override
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.button_one:
                 ConstraintLayoutActivity.start(this);
+                break;
+            case R.id.button_two:
+                TextInputEditTextActivity.start(this);
                 break;
         }
     }

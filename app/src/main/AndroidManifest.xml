@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ConstraintLayoutActivity"></activity>
+        <activity android:name=".activity.ConstraintLayoutActivity" />
+        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.TextInputEditTextActivity"></activity>
     </application>
 
 </manifest>

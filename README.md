@@ -67,3 +67,66 @@
      * 然后把创建好的布局约束应用到一个 ConstraintLayout 上
      *
      */
+
+    BaselineLayout
+    BottomNavigationItemView
+    BottomNavigationMenuView
+    ForegroundLinearLayout
+    NavigationMenu
+    BottomSheetDialog
+    BottomSheetDialogFragment
+
+    CoordinatorLayout
+    AppBarLayout
+    CollapsingToolbarLayout
+    ToolBar
+    RecycleView
+    在此基础上添加下面布局
+    NavigationView
+    FloatingActionButton
+    Snackbar
+
+    TextInputLayout
+    TextInputEditText
+
+    TabLayout
+    BottomNavigationView
+
+    CardView
+
+
+#### TextInputLayout and TextInputEditText
+
+> TextInputLayout
+
+    app:Theme	                         设置下划线或其他的颜色属性
+    counterEnabled	                         是否显示计数器
+    counterMaxLength	设置计数器的最大值,与counterEnabled同时使用
+    counterTextAppearance	计数器的字体样式
+    counterOverflowTextAppearance	 输入字符大于我们限定个数字符时的字体样式
+    errorEnabled	                          是否显示错误信息
+    errorTextAppearance	错误信息的字体样式
+    hintAnimationEnabled	是否显示hint的动画,默认true
+    hintEnabled	                          是否使用hint属性,默认true
+    hintTextAppearance	设置hint的文字样式(指运行动画效果之后的样式)
+    passwordToggleDrawable	设置密码开关Drawable图片,于passwordToggleEnabled同时使用
+    passwordToggleEnabled	是否显示密码开关图片,需要EditText设置inputType
+    passwordToggleTint	设置密码开关图片颜色
+    passwordToggleTintMode	设置密码开关图片(混合颜色模式),与passwordToggleTint同时使用
+
+    注意：
+        添加库的时候注意要加appcompat-v7库,确保可以向后兼容
+        一个TextInputLayout只能套一个EditText(或它的子类TextInputEditText)
+        使用了TextInputLayout,和它的setError(),布局所占的位置会变多,设计布局注意留适当的空间
+        TextInputLayout.setError()注意调用setErrorEnabled(false)清空错误信息,不然会一直显示
+
+> TextInputEditText
+
+    属性同EditText
+    当我们的界面处于全屏时,点击一个EditText,默认情况下不是在它下面弹出键盘，
+    而是进入到输入法的一个全屏的输入界面(通过配置android:imeOptions=”flagNoExtractUi”可以设为直接在当前界面显示)
+
+    如果我们给EditText 套上了一个TextInputLayout时,TextInputLayout会拿到EditText的hint显示出来并把EditText本身的hint设为空.
+    这样我们在全屏的输入界面上,就显示不出来我们设置hint,因此TextInputEditText重写了EditText
+
+    EditText的imeOptions要与inputType同时使用,不然没有反应
