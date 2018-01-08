@@ -19,13 +19,25 @@
                 android:id="@+id/button_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="text ConstraintLayout"/>
+                android:text="test ConstraintLayout"/>
 
             <Button
                 android:id="@+id/button_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="text ConstraintLayout"/>
+                android:text="test ConstraintLayout"/>
+
+            <Button
+                android:id="@+id/button_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="test list table"/>
+
+            <Button
+                android:id="@+id/button_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="tool bar test"/>
 
         </LinearLayout>
 

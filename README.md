@@ -130,3 +130,29 @@
     这样我们在全屏的输入界面上,就显示不出来我们设置hint,因此TextInputEditText重写了EditText
 
     EditText的imeOptions要与inputType同时使用,不然没有反应
+
+> FloatingActionButton
+
+    app:backgroundTint - 设置FAB的背景颜色。
+    app:rippleColor - 设置FAB点击时的背景颜色。
+    app:borderWidth - 该属性尤为重要，如果不设置0dp，那么在4.1的sdk上FAB会显示为正方形，而且在5.0以后的sdk没有阴影效果。所以设置为borderWidth="0dp"。
+    app:elevation - 默认状态下FAB的阴影大小。
+    app:pressedTranslationZ - 点击时候FAB的阴影大小。
+    app:fabSize - 设置FAB的大小，该属性有两个值，分别为normal和mini，对应的FAB大小分别为56dp和40dp。
+    src - 设置FAB的图标，Google建议符合Design设计的该图标大小为24dp。
+    app:layout_anchor - 设置FAB的锚点，即以哪个控件为参照点设置位置。
+    app:layout_anchorGravity - 设置FAB相对锚点的位置，值有 bottom、center、right、left、top等。
+
+> ToolBar
+
+推荐链接：[ToolBar详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1118/2006.html)
+
+    1、设置styles去掉ActionBar
+    2、在布局文件中添加ToolBar
+    3、设置ToolBar
+
+> CoordinatorLayout
+
+   推荐链接：[CoordinatorLayout使用](http://blog.csdn.net/xyz_lmn/article/details/48055919)
+
+   [链接](http://blog.csdn.net/feiduclear_up/article/details/46514791)
