@@ -17,4 +17,17 @@
         <item name="colorAccent">@color/dim_foreground_material_dark</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="SwitchCompat" parent="Theme.AppCompat.Light">
+        <!--开启时的颜色-->
+        <item name="colorControlActivated">#00e6db</item>
+        <!--关闭时的颜色-->
+        <item name="colorSwitchThumbNormal">#383434</item>
+        <!--关闭时的轨迹颜色-->
+        <item name="android:colorForeground">#ecd502</item>
+    </style>
+
 </resources>

@@ -133,6 +133,8 @@
 
 > FloatingActionButton
 
+推荐链接：[FAB详解](http://blog.csdn.net/wei_smile/article/details/51375170)
+
     app:backgroundTint - 设置FAB的背景颜色。
     app:rippleColor - 设置FAB点击时的背景颜色。
     app:borderWidth - 该属性尤为重要，如果不设置0dp，那么在4.1的sdk上FAB会显示为正方形，而且在5.0以后的sdk没有阴影效果。所以设置为borderWidth="0dp"。
@@ -156,3 +158,63 @@
    推荐链接：[CoordinatorLayout使用](http://blog.csdn.net/xyz_lmn/article/details/48055919)
 
    [链接](http://blog.csdn.net/feiduclear_up/article/details/46514791)
+
+> NavigationView
+
+参考链接：[Navigationview](https://www.jianshu.com/p/d2b1689a23bf)
+
+可以结合ToolBar一块使用，达到联动的效果
+
+DrawerLayout控件包含上NavigationView
+
+DrawerLayout内只能有一个子控件
+
+    android:layout_gravity="start" // 设置滑动窗口的位置
+    app:headerLayout="@layout/top_view" // 窗口内的顶部标题布局
+    app:menu="@menu/top" // 窗口内的item布局，以menu的方式添加
+
+如果结合ToolBar一起使用：
+
+    // 联动效果
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+    /*ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+             this, drawer, toolbar, R.string.open, R.string.close);*/
+
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,
+             R.string.open, R.string.close); // 不带home图标
+
+    drawer.setDrawerListener(toggle);
+    toggle.syncState();
+
+    // 设置监听
+    NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+    navigationView.setNavigationItemSelectedListener(this);
+
+
+> SwitchCompat
+
+参考链接：[SwitchCompat使用小结](http://blog.csdn.net/jiangtea/article/details/71189438)
+
+    showText：true/false	决定是否显示开关按钮上的文字
+    splitTrack： true/false	开关的样式
+    switchMinWidth	开关的最小宽度
+    switchPadding	文字和开关的最小距离
+    switchTextAppearance	开关文字样式
+    thumbTextPadding	文字距两侧的距离
+    thumbTint	开关上按钮的颜色
+    thumbTintMode	按钮样式
+    track	轨道，类似音乐进度条可滑动
+    trackTint	轨道颜色
+    trackTintMode	轨道样式
+    textOff	设置按钮关闭状态显示的文字
+    textOn	设置按钮打开状态显示的文字
+    thumb	引用主题颜色
+    app:theme 设置主题（包含开启颜色，关闭颜色，轨道颜色）
+    // 以上属性均可以使用代码进行设置
+
+    获取状态：
+    switchCompat.isChecked();

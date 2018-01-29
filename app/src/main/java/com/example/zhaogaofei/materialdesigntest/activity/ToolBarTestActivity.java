@@ -4,16 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.zhaogaofei.materialdesigntest.R;
 
-public class ToolBarTestActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
+public class ToolBarTestActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener, View.OnClickListener {
 
     private Toolbar toolbar;
+    private SwitchCompat switchCompat;
 
     public static void start(Context context) {
         context.startActivity(new Intent(context, ToolBarTestActivity.class));
@@ -34,6 +37,10 @@ public class ToolBarTestActivity extends AppCompatActivity implements Toolbar.On
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
+
+        switchCompat = (SwitchCompat) findViewById(R.id.switch_compat);
+        switchCompat.setChecked(true);
+        switchCompat.setOnClickListener(this);
     }
 
     @Override
@@ -72,5 +79,11 @@ public class ToolBarTestActivity extends AppCompatActivity implements Toolbar.On
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        boolean checked = switchCompat.isChecked();
+        Toast.makeText(this, checked + "", Toast.LENGTH_SHORT).show();
     }
 }

@@ -19,4 +19,21 @@
         android:layout_height="wrap_content"
         android:text="tool bar text"/>
 
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/switch_compat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:showText="true"
+        app:theme="@style/SwitchCompat"
+        android:textOff="关"
+        android:textOn="开"/>
+    <!--app:splitTrack="true"
+        app:thumbTint="@color/colorPrimary"
+        app:thumbTintMode="multiply"
+        app:track="@color/colorAccent"
+        app:trackTint="@color/colorAccent"
+        app:trackTint="@color/colorAccent"
+        app:thumbTint="@color/colorPrimary"
+        app:trackTintMode="src_over"-->
+
 </LinearLayout>

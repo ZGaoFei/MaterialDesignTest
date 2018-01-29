@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.zhaogaofei.materialdesigntest.R;
@@ -93,6 +94,13 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showSnackBar(String text) {
-        Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_SHORT).show();
+//        Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_SHORT)
+                .setAction("click", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ListActivity.this, "click", Toast.LENGTH_SHORT).show();
+            }
+        }).show();
     }
 }
